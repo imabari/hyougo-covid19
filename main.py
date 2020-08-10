@@ -114,11 +114,19 @@ if __name__ == "__main__":
         .astype(int)
     )
 
-    # 計追加
+    # 日付を文字列に変換
+    cr_ages.index = cr_ages.index.strftime("%Y-%m-%d")
+
+    # 行計追加
     cr_ages["計"] = cr_ages.sum(axis=1)
 
+    # 列計追加
+    tmp_ages = cr_ages.sum()
+    tmp_ages.name = "計"
+    cr_ages = cr_ages.append(tmp_ages)
+
     # 最終行を表示
-    cr_ages.tail(1)
+    cr_ages.tail(2)
 
     # ファイル保存
     cr_ages.to_csv(pathlib.Path("data", "ages.csv"), encoding="utf_8_sig")
@@ -155,11 +163,19 @@ if __name__ == "__main__":
         .astype(int)
     )
 
+    # 日付を文字列に変換
+    cr_area.index = cr_area.index.strftime("%Y-%m-%d")
+
     # 計追加
     cr_area["計"] = cr_area.sum(axis=1)
 
+    # 列計追加
+    tmp_area = cr_area.sum()
+    tmp_area.name = "計"
+    cr_area = cr_area.append(tmp_area)
+
     # 最終行を表示
-    cr_area.tail(1)
+    cr_area.tail(2)
 
     # ファイル保存
     cr_area.to_csv(pathlib.Path("data", "area.csv"), encoding="utf_8_sig")
