@@ -1,6 +1,6 @@
 # hyougo-covid19
 
-毎日15:00～21:00の1時間ごと更新確認
+毎日14:00～22:00の2時間ごとに更新確認
 
 https://github.com/imabari/hyougo-covid19/tree/gh-pages
 
