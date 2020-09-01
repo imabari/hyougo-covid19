@@ -73,7 +73,7 @@ if __name__ == "__main__":
     df_kanja.set_index("番号", inplace=True)
 
     # 除外
-    df_kanja.drop(738, inplace=True)
+    df_kanja.drop([738, 2003], inplace=True)
 
     # 年代
     df_kanja["年代"] = df_kanja["年代"].astype(str)
@@ -81,7 +81,7 @@ if __name__ == "__main__":
 
     # 備考欄
     df_kanja["備考欄"] = df_kanja["備考欄"].str.replace("\n", "")
-    df_kanja["備考欄"] = df_kanja["備考欄"].str.replace("NO.|N0.|NO,|N0,|No,", "No.")
+    df_kanja["備考欄"] = df_kanja["備考欄"].str.replace("NO.|N0.|NO,|N0,|No,|№", "No.")
     df_kanja["備考欄"] = df_kanja["備考欄"].str.replace("・", "、")
     df_kanja["備考欄"] = df_kanja["備考欄"].fillna("")
 
