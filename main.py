@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     df_kanja = pd.read_excel(
         p,
-        skiprows=3,
+        skiprows=4,
         skipfooter=2,
         usecols=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         dtype={"番号": "Int64"},
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     df_kanja.set_index("番号", inplace=True)
 
     # 除外
-    df_kanja.drop([738, 2003], inplace=True)
+    df_kanja.drop([738, 1793, 2003, 2301, 2302, 2303, 2304, 2313], inplace=True)
 
     # 年代
     df_kanja["年代"] = df_kanja["年代"].astype(str)
