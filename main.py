@@ -73,7 +73,7 @@ if __name__ == "__main__":
     df_kanja.set_index("番号", inplace=True)
 
     # 除外
-    df_kanja.drop([738, 1793, 2003, 2301, 2302, 2303, 2304, 2313], inplace=True)
+    df_kanja.dropna(thresh=2, inplace=True)
 
     # 年代
     df_kanja["年代"] = df_kanja["年代"].astype(str)
