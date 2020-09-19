@@ -55,8 +55,8 @@ if __name__ == "__main__":
 
     # 前処理
 
-    # 全列欠損を削除
-    df_kanja.dropna(how="all", inplace=True)
+    # データが列に3個以上ないと削除
+    df_kanja.dropna(thresh=3, inplace=True)
 
     # 発表日
     flg_is_serial = df_kanja["発表日"].astype("str").str.isdigit()
@@ -71,9 +71,6 @@ if __name__ == "__main__":
     df_kanja["発表日"] = pd.concat([fromString, fromSerial])
 
     df_kanja.set_index("番号", inplace=True)
-
-    # 除外
-    df_kanja.dropna(thresh=2, inplace=True)
 
     # 年代
     df_kanja["年代"] = df_kanja["年代"].astype(str)
