@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     df_kanja = pd.read_excel(
         p,
-        skiprows=4,
+        skiprows=3,
         skipfooter=2,
         usecols=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         dtype={"番号": "Int64"},
