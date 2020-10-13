@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     # スクレイピング
 
-    p = fetch_excel("https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html")
+    p = fetch_excel("https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html")
 
     df_kanja = pd.read_excel(
         p,
